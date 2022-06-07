@@ -6,7 +6,7 @@ Quiz Compiler is a Python script that takes a quiz from a human-readable format 
 
 Clone this repo to your machine and add the contents of your quiz into `quiz.txt`.
 
-You can then run the script like so:
+You can then run the quiz compiler script like so:
 
 ```bash
 python main.py
