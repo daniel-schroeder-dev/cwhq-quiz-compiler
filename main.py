@@ -8,7 +8,7 @@ def get_quiz_path():
     Allows the user to enter a path to their quiz and returns it. Otherwise,
     returns `quiz.txt` in the current directory as the `quiz_path
     """
-    
+
     quiz_path = Path("quiz.txt")
 
     if len(sys.argv) > 1:
@@ -58,8 +58,10 @@ def build_quiz_viewer(sanitized_quiz_lines):
     double-check that the sanitization process went smoothly.
     """
     lines = []
-    with open("quiz-template.html", mode="rt", encoding="utf-8") as quiz_template_file:
-        lines = quiz_template_file.readlines()
+    with open(
+        "quiz-viewer-template.html", mode="rt", encoding="utf-8"
+    ) as quiz_viewer_template_file:
+        lines = quiz_viewer_template_file.readlines()
 
     html_lines = []
     for line in lines:
