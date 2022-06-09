@@ -78,6 +78,9 @@ def build_quiz_viewer(sanitized_quiz_lines):
 
 
 def strip_space(line):
+    """
+    Removes any space between the first `|` of a `Q|`, `AC|` or `A|`.
+    """
     bar_index = line.index("|")
     for i, char in enumerate(line[bar_index+1:]):
         if not char.isspace():
