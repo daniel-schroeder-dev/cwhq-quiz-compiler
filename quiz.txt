@@ -7,10 +7,10 @@ A|<title>
 A|<head>
 
 Q|Why would we use a flogger?
-AC|Give it a shmoopy.
-A|Something catchy.
-A|Eat a hotdog.
-A|Dunno.
+AC| Give it a shmoopy.
+A| Something catchy.
+A|   Eat a hotdog.
+A| Dunno.
 
 Q|Which of the following creates a round thing?
 A|<multiline-code>

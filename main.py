@@ -44,6 +44,9 @@ def build_sanitized_quiz(quiz_path):
         if multiline_mode:
             line = line.replace("\n", "<br>")
 
+        if line.startswith("Q|") or line.startswith("AC|") or line.startswith("A|"):
+            line = strip_space(line)
+
         sanitized_quiz_lines.append(line)
 
     with open("sanitized-quiz.txt", mode="wt", encoding="utf-8") as sanitized_file:
@@ -72,6 +75,15 @@ def build_quiz_viewer(sanitized_quiz_lines):
 
     with open("quiz-viewer.html", mode="wt", encoding="utf-8") as quiz_viewer_file:
         quiz_viewer_file.writelines(html_lines)
+
+
+def strip_space(line):
+    bar_index = line.index("|")
+    for i, char in enumerate(line[bar_index+1:]):
+        if not char.isspace():
+            break
+    line = line[:bar_index+1] + line[i+bar_index+1:]
+    return line
 
 
 if __name__ == "__main__":
